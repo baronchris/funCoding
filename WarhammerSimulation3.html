@@ -1,0 +1,119 @@
+<doctype HTML>
+    <html>
+        <head>
+            <title>Warhammer simulator v2</title>
+            <script type="text/javascript" src="WarhammerSimulationv3.js"></script>
+            <link href ="WarhammerSimulation.css" rel="stylesheet" type="text/css"/>
+        </head>
+        <body>
+            <div type="container" class="textContainer" style="background-color: silver">
+                <h1>Warhammer 40K dice rolling simulation for attacks, wounds, and armor saves</h1>
+                <h3>Because I wanted some more practice with JavaScript</h3>
+            </div>
+            <div class="container" id="formContainer">
+                <form name="statlines" onreset="resetForm();" 
+                onsubmit="return turnOrder();" class="form-inline">
+                <div id="unit1" style="background-color: silver">
+                    <h2 class="textContainer" style="background-color: goldenrod"> Unit 1</h2>
+                <div class="form-group">
+                        <label for="models1">Unit Strength</label>
+                        <input type="number" class="form-control" id="models1">
+                    </div> 
+                <div class="form-group">
+                        <label for="Ws1">Weapon Skill</label>
+                        <input type="number" class="form-control" id="Ws1">
+                    </div> 
+                    <div class="form-group">
+                        <label for="B1">Ballistic skill</label>
+                        <input type="number" class="form-control" id="B1">
+                    </div> 
+                    <div class="form-group">
+                        <label for="S1">Strength</label>                      <!--[Ws,B,S,T,I,A,Wo,L];-->
+                        <input type="number" class="form-control" id="S1">
+                    </div>
+                    <div class="form-group">
+                        <label for="T1">Toughness</label>
+                        <input type="number" class="form-control" id="T1">
+                    </div>
+                    <div class="form-group">
+                        <label for="I1">Initiative</label>
+                        <input type="number" class="form-control" id="I1">
+                    </div>
+                    <div class="form-group">
+                        <label for="A1">Attacks</label>
+                        <input type="number" class="form-control" id="A1">
+                    </div>
+                    <div class="form-group">
+                        <label for="Wo1">Wounds</label>
+                        <input type="number" class="form-control" id="Wo1">
+                    </div>
+                    <div class="form-group">
+                        <label for="L1">Leadership</label>
+                        <input type="number" class="form-control" id="L1">
+                    </div>
+                    <div class="form-group">
+                        <label for="save1">Armour Save</label>
+                        <input type="number" class="form-control" id="save1">
+                    </div>
+                    <div class="form-group" id=powerWeapon1>
+                    <label for="powerWeapon1">power weapons?</label>
+                    <input type="radio" name="no" value="false" checked/>No
+                    <input type="radio" name="yes" value="true">Yes
+                    </div>
+                </div>
+                <div class="divider">
+                </div>
+                 <h2 class="textContainer" style="background-color: goldenrod"> Unit 2</h2>
+                <div id="unit2" style="background-color: skyblue">  <!--[Ws,B,S,T,I,A,Wo,L];-->
+                    <div class="form-group">
+                        <label for="models2">Unit Strength</label>
+                        <input type="number" class="form-control" id="models2">
+                    </div> 
+                    <div class="form-group">
+                        <label for="Ws2">Weapon Skill</label>
+                        <input type="number" class="form-control" id="Ws2">
+                    </div> 
+                    <div class="form-group">
+                        <label for="B2">Ballistic skill</label>
+                        <input type="number" class="form-control" id="B2">
+                    </div> 
+                    <div class="form-group">
+                        <label for="S2">Strength</label>                      <!--[Ws,B,S,T,I,A,Wo,L];-->
+                        <input type="number" class="form-control" id="S2">
+                    </div>
+                    <div class="form-group">
+                        <label for="T2">Toughness</label>
+                        <input type="number" class="form-control" id="T2">
+                    </div>
+                    <div class="form-group">
+                        <label for="I2">Initiative</label>
+                        <input type="number" class="form-control" id="I2">
+                    </div>
+                    <div class="form-group">
+                        <label for="A2">Attacks</label>
+                        <input type="number" class="form-control" id="A2">
+                    </div>
+                    <div class="form-group">
+                        <label for="Wo2">Wounds</label>
+                        <input type="number" class="form-control" id="Wo2">
+                    </div>
+                    <div class="form-group">
+                        <label for="L2">Leadership</label>
+                        <input type="number" class="form-control" id="L2">
+                    </div>
+                    <div class="form-group">
+                        <label for="save2">Armour Save</label>
+                        <input type="number" class="form-control" id="save2">
+                    </div>
+                    <div class="form-group" id=powerWeapon2>
+                    <label for="powerWeapon2">power weapons?</label>
+                    <input type="radio" name="no" value="false" checked/>No
+                    <input type="radio" name="yes" value="true">Yes
+                    </div>
+                </div>
+                    <button type="submit" id="submitButton" class="btn btn-default">Submit</button>
+                    <button type="reset" id="resetButton" class="btn">Reset</button>
+                </form>
+                </div>
+        </body>
+    </html>

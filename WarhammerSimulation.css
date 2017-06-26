@@ -1,0 +1,19 @@
+body{
+    background-color: silver;
+}
+.textContainer{
+    background-color: silver;
+    color: maroon;
+    text-align: center;
+}
+.divider{
+background-color: black;
+border-top: 5px skyblue solid;
+border-bottom: 5px silver solid;
+height: 20px; 
+}
+.form-group{
+    margin-bottom: 4px;
+    margin-left: auto;
+    margin-right: auto;
+}
