@@ -1,7 +1,7 @@
 <DOCTYPE HTML>
     <HTML>
         <head>
-            <title>Reverse complement generator Mk1.0</title>
+            <title>Reverse complement generator Mk2.0</title>
             <script type="text/javascript" src="reverseComplementV2.js"></script>
             <link href ="bootstraprest2.css" rel="stylesheet" type="text/css"/>
             <style>
@@ -18,7 +18,6 @@
                     text-align: center;
                 }
                 .container{
-                    margin-left: 35%;
                     width: auto;
                 }
                 .rowID{
@@ -26,9 +25,9 @@
                 }
             </style>
         </head>
-        <body>
+        <body onload="info()">
             <h1>Reverse complement generator</h1>
-            <div class="container" id="inputHolder">
+            <div class="container" id="inputHolder" style="text-align: center">
                 <form name="sequencesubmit" onreset="resetForm();" 
                 onsubmit="return Complementfinder();" class="form-inline">
                 <div class="form-group">
@@ -49,11 +48,11 @@
                         <td><span id="submitSequence">  </span></td>
                     </tr>
                     <tr> 
-                        <td class="rowID">sequence length</td>
+                        <td class="rowID">Sequence length</td>
                         <td><span id="seqLength"> </span></td>
                     </tr>
                     <tr>
-                        <td class="rowID">Reverse Complement</td>
+                        <td class="rowID">Reverse complement</td>
                         <td><span id="revComp">  </span></td>
                     </tr>
                     <tr>
@@ -73,12 +72,18 @@
                         <td><span id="Gprev">  </span></td>
                     </tr>
                 </table>
-            </div>
             <br/>
+            <h3 style="text-align:center; background-color:lightgray">Initial sequence</h3>
             <div id="longinput" class="outputDiv" style="background-color: lightgray; text-align: center">
             </div>
             <hr/>
+            <h3 style="text-align:center">Reverse complement</h3>
             <div id="longResult" class="outputDiv" style="text-align: center">
+            </div>
+            <hr/>
+            <h3 style="text-align:center ; background-color:lightgray">mRNA transcript</h3>
+            <div id="mRNAResult" class="outputDiv" style="background-color: lightgray; text-align: center">
+            </div>
             </div>
         </body>
     </HTML>

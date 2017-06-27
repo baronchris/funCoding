@@ -1,4 +1,7 @@
-var initSequence ="";
+function info(){
+    alert("Sequence analysis software V2.5 \n By Chris Williams");
+}
+
 function Complementfinder(initSequence){
 var initSequence= document.forms["sequencesubmit"]["initSequence"].value;
 var complement = [];
@@ -17,7 +20,6 @@ var Apercent =0;
 var Tpercent=0;
 var Cpercent=0;
 var Gpercent=0;
-alert(initSequence);
     for(var i=0; i<strandLength; i++){
         if(initupper[i] !== "A" || initupper[i] !=="C" 
         || initupper[i]!=="T" ||initupper[i]!=="G" || initupper[i]!=="N"){
@@ -45,28 +47,21 @@ alert(initSequence);
         }
         complement[i]=current;
     }
-    alert("complement is "+complement);
     for(var j=0; j<(complement.length); j++){
         var revIndex=((complement.length)-j);
         reverseComplement[revIndex]=complement[j];
     }
+    alert("loop done");
     reverseComplement.splice(0,1);
     resultString=reverseComplement.join("");
     finalLength=resultString.length;
+    alert("reverse complement is " +resultString);
     Apercent=((Acount/finalLength)*100);
-    alert(Acount+" bases are 'A'")
-    alert(Apercent+"% of input is A");
     Tpercent=((Tcount/finalLength)*100);
-    alert(Tcount+" bases are 'T'")
-    alert(Tpercent+"% of input is T");
     Cpercent=((Ccount/finalLength)*100);
-    alert(Ccount+" bases are 'C'")
-    alert(Cpercent+"% of input is C");
     Gpercent=((Gcount/finalLength)*100);
-    alert(Gcount+" bases are 'G'")
-    alert(Gpercent+"% of input is G");
-    alert("the reverse complement of your sequence is: \n"+ resultString+
-    " \n the length of your sequence is: "+complement.length);
+    var RNASeq=" "
+    RNASeq=initupper.replace(/T/g,"U");
     document.getElementById("resultsHolder").style.display ="block";
     document.getElementById("submitSequence").innerText = initSequence;
     document.getElementById("seqLength").innerText = strandLength;
@@ -77,9 +72,21 @@ alert(initSequence);
     document.getElementById("Gprev").innerText = Gpercent;
     document.getElementById("longinput").innerHTML = initSequence;
     document.getElementById("longResult").innerHTML =resultString;
+    document.getElementById("mRNAResult").innerHTML =RNASeq;
+    alert("transcript of initial querrry is:" +RNASeq);
     return false;
 }
 
+function transcription(resultString){
+    var resultlength =resultString.length;
+    var mRNASeq= resultString.replace("T","U");
+    for(var m=0; m < resultlength; m++ ){
+        if(mRNASeq[m]=="T"){
+            mRNASeq.splice(mRNASeq.length,1,"U");
+        }
+    }
+    return mRNASeq;
+}
 
 function resetForm() {
     complement =[];
