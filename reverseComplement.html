@@ -1,0 +1,73 @@
+<DOCTYPE HTML>
+    <HTML>
+        <head>
+            <title>Reverse complement generator Mk1.0</title>
+            <script type="text/javascript" src="reverseComplement.js"></script>
+            <link href ="bootstraprest2.css" rel="stylesheet" type="text/css"/>
+            <style>
+                h1{
+                    text-align: center;
+                    font-weight: bold;
+                }
+                input{
+                     background-color: lightgray;
+                }
+                table, th, td{
+                    border-collapse: collapse;
+                    border: solid black 1px;
+                    text-align: center;
+                }
+                .container{
+                    margin-left: 35%;
+                    width: auto;
+                }
+                .rowID{
+                    width: 15%;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Reverse complement generator</h1>
+            <div class="container" id="inputHolder">
+                <form name="sequencesubmit" onreset="resetForm();" 
+                onsubmit="return Complementfinder();" class="form-inline">
+                <div class="form-group">
+                        <label for="initSequence">Querry Sequence</label>
+                        <input type="text" class="form-control" id="initSequence">
+                </div>
+                 <button type="submit" id="submitButton" class="btn btn-default">Submit</button>
+                <button type="reset" id="resetButton" class="btn">Reset</button>
+                </form>
+            </div>
+            <div class="container" id="resultsHolder" style="display: none">
+                <table id="resultSequence" style="width:50%">
+                    <tr>
+                    <th colspan="2"> Results</th>
+                    </tr>
+                    <tr>
+                        <td class="rowID">Initial sequence</td>
+                        <td><span id="submitSequence">  </span></td>
+                    </tr>
+                    <tr> 
+                        <td class="rowID">sequence length</td>
+                        <td><span id="seqLength"> </span></td>
+                    </tr>
+                    <tr>
+                        <td class="rowID">Reverse Complement</td>
+                        <td><span id="revComp">  </span></td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <div id="longinput" class="outputDiv" style="background-color: lightgray">
+            </div>
+            <br/>
+            <hr/>
+            <div id="longResult" class="outputDiv">
+            </div>
+        </body>
+    </HTML>
+
+
+
+            
