@@ -1,7 +1,7 @@
 <DOCTYPE HTML>
     <HTML>
         <head>
-            <title>Reverse complement generator Mk3.0</title>
+            <title>DNA Sequence analysis Mk1.0</title>
             <script type="text/javascript" src="reverseComplementV3.js"></script>
             <link href ="bootstraprest2.css" rel="stylesheet" type="text/css"/>
             <style>
@@ -26,34 +26,26 @@
             </style>
         </head>
         <body onload="info()">
-            <h1>Reverse complement generator</h1>
+            <h1>DNA sequence analysis</h1>
             <div class="container" id="inputHolder" style="text-align: center">
                 <form name="sequencesubmit" onreset="resetForm();" 
                 onsubmit="return Complementfinder();" class="form-inline">
                 <div class="form-group">
-                        <label for="initSequence">Querry Sequence</label>
+                        <label for="initSequence">Query Sequence</label>
                         <input type="text" class="form-control" id="initSequence">
                 </div>
                  <button type="submit" id="submitButton" class="btn btn-default">Submit</button>
                 <button type="reset" id="resetButton" class="btn">Reset</button>
                 </form>
             </div>
-            <div class="container" id="resultsHolder" style="display: none">
+            <div class="container" id="resultsHolder" style="display: none">  <!--table seemed like a good idea at the time!-->
                 <table id="resultSequence" style="width:50%">
                     <tr>
                     <th colspan="2"> Results</th>
                     </tr>
-                    <tr>
-                        <td class="rowID">Initial sequence</td>
-                        <td><span id="submitSequence">  </span></td>
-                    </tr>
                     <tr> 
                         <td class="rowID">Sequence length</td>
                         <td><span id="seqLength"> </span></td>
-                    </tr>
-                    <tr>
-                        <td class="rowID">Reverse complement</td>
-                        <td><span id="revComp">  </span></td>
                     </tr>
                     <tr>
                         <td class="rowID">% A</td>
@@ -70,6 +62,18 @@
                     <tr>
                         <td class="rowID">% G</td>
                         <td><span id="Gprev">  </span></td>
+                    </tr>
+                    <tr>
+                        <td class="rowID">% TSS (base number)</td>
+                        <td><span id="TSSloc">  </span></td>
+                    </tr>
+                    <tr>
+                        <td class="rowID"> stop codons in frame (TAG, TAA, TGA)</td>
+                        <td><span id="stopCodonLoc">  </span></td>
+                    </tr>
+                    <tr>
+                        <td class="rowID">ORF length</td>
+                        <td><span id="ORFSize">  </span></td>
                     </tr>
                 </table>
             <br/>

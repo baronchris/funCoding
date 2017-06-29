@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Redo of practice audition</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="auditionRedo.js"></script>
+    </head>
+    <body>
+        <h1 style="text-align: center">Step = search</h1>
+        <div class="container">
+            <form class="form-inline" name="inputData" onreset="resetForm()" onsubmit="return evenstep();">
+                <div class="form-group">
+                    <label for="number1">number 1</label>
+                    <input type="number" class="form-control" id="number1">
+                </div>
+                <div class="form-group">
+                    <label for="number2">number 2</label>
+                    <input type="number" class="form-control" id="number2">
+                </div>
+                <div class="form-group">
+                    <label for="step">Step</label>
+                    <input type="number" class="form-control" id="step">
+                </div>
+                <button type="submit" id="SubmitButton" class="btn btn-default">Submit</button>
+                <button type="reset"  id="resetButton" class="btn">Reset</button>
+            </form>
+        </div>
+        <br/>
+        <hr/>
+        <div id="resultSpace" style="text-align: center; font-size: 24pt">
+        </div>
+        <div id="teststrip" style="display: none; background-color: red">
+            <br/>
+        </div>
+
+                
+
+        

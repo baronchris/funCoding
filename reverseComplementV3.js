@@ -51,33 +51,29 @@ var Gpercent=0;
         var revIndex=((complement.length)-j);
         reverseComplement[revIndex]=complement[j];
     }
-    alert("loop done");
     reverseComplement.splice(0,1);
     resultString=reverseComplement.join("");
     finalLength=resultString.length;
-    alert("reverse complement is " +resultString);
     Apercent=((Acount/finalLength)*100);
     Tpercent=((Tcount/finalLength)*100);
     Cpercent=((Ccount/finalLength)*100);
     Gpercent=((Gcount/finalLength)*100);
     var readingFrame =" ";
     readingFrame=TSSFinder(initupper);
+    var ORFLength=readingFrame.length;
     var RNASeq=" "
     RNASeq=readingFrame.replace(/T/g,"U");
-    alert("html entered readingFrame is: \n" +readingFrame);
     document.getElementById("resultsHolder").style.display ="block";
-    document.getElementById("submitSequence").innerText = initSequence;
     document.getElementById("seqLength").innerText = strandLength;
-    document.getElementById("revComp").innerText = resultString;
     document.getElementById("Aprev").innerText = Apercent;
     document.getElementById("Tprev").innerText = Tpercent;
     document.getElementById("Cprev").innerText = Cpercent;
     document.getElementById("Gprev").innerText = Gpercent;
+    document.getElementById("ORFSize").innerText = ORFLength;
     document.getElementById("longinput").innerHTML = initSequence;
     document.getElementById("longResult").innerHTML =resultString;
     document.getElementById("ORF").innerHTML =readingFrame;
     document.getElementById("mRNAResult").innerHTML =RNASeq;
-    alert("transcript of initial querrry is:" +RNASeq);
     return false;
 }
 
@@ -96,7 +92,7 @@ function TSSFinder(initSequence){
     var ORFArray =[];
     var TSSadjust=TSS+1;  //since base counting starting at zero is not biological convention
     var finalArray=[];
-    alert("Transcription start site begins at base#: "+ TSSadjust);
+    document.getElementById("TSSloc").innerText = TSSadjust;
     for(i=TSS; i<initSequence.length; i++){
         ORFArray[ORFArray.length]=initSequence[i];
     }
@@ -115,7 +111,7 @@ function TSSFinder(initSequence){
             stopArray.splice(j,1);
         }
     }
-    alert("stop array is " +stopArray);   
+    document.getElementById("stopCodonLoc").innerText=stopArray;  
     var stopCodon =Math.min(...stopArray);
     alert("Stop position is codon number: " + stopCodon);
     for(var k=0; k<stopCodon+3; k++){
