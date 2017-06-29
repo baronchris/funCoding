@@ -102,29 +102,29 @@ function TSSFinder(initSequence){
     }
     console.log(ORFArray);  
     var tripletstring =ORFArray.join("");
-    var codonAray=[];
-    codonAray=tripletstring.match(/.{1,3}/g);
-    alert("codon array done: " +codonAray);
-    var amber =tripletstring.indexOf("TAG");
-    var ochre =tripletstring.indexOf("TAA");
-    var opal =tripletstring.indexOf("TGA")
+    var codonArray=[];
+    codonArray=tripletstring.match(/.{1,3}/g);
+    alert("codon array done: " +codonArray);
+    var amber =codonArray.indexOf("TAG");
+    var ochre =codonArray.indexOf("TAA");
+    var opal =codonArray.indexOf("TGA")
     alert("stop sites at: "+amber+" "+ochre+" "+opal);//need to alter so only in frame stop codons used
     var stopArray =[amber, ochre, opal];
     for(j=0; j<3; j++){
-        if(stopArray[j]<2){
+        if(stopArray[j]<1){
             stopArray.splice(j,1);
         }
     }
     alert("stop array is " +stopArray);   
     var stopCodon =Math.min(...stopArray);
-    alert("Stop position is " + stopCodon);
+    alert("Stop position is codon number: " + stopCodon);
     for(var k=0; k<stopCodon+3; k++){
-        finalArray[finalArray.length]=tripletstring[k];
+        finalArray[finalArray.length]=codonArray[k];
     }
     var finalString=finalArray.join("");
     return finalString;
 }
-/*  for splitting strings into chunks of 3 try as codonAray
+/*  for splitting strings into chunks of 3 try as codonArray
 var str = 'abcdefghijkl';
  console.log(str.match(/.{1,3}/g)); */
 
