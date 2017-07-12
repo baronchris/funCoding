@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Lucky 7s</title>
+        <script type="text/javascript" src="lucky7s.js"></script>
+         <link href ="bootstraprest2.css" rel="stylesheet" type="text/css"/>
+         <style>
+             table, th, td{
+                    border-collapse: collapse;
+                    border: solid black 1px;
+                    text-align: center;
+                }
+            .rowID{
+                    width: 15%;
+                }
+        </style>
+    </head>
+    <body>
+        <div>
+            <label for="startbet">Starting bet</label>
+            <input type="number" id="startbet">
+            <button onclick="luckySevens();">Submit</button>
+            <button onclick="resetPage();">Reset</button>
+        </div>
+    <div style="display:none" id="results">
+    <table id="resultTable" style="border: black">
+        <th>Results</th>
+        <tr>
+            <td class="rowID">rolls</td>
+            <td><span id="rolls"></span></td>
+        </tr>
+        <tr>
+            <td class="rowID">highest pot</td>
+            <td><span id="maxPot"></span></td>
+        </tr>
+        <tr>
+            <td class="rowID">starting bet</td>
+            <td><span id="ante"></span></td>
+        </tr>
+    </table>
+    </div>
+        
